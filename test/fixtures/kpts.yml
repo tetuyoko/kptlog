@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  parent_id: 1
+  category: MyString
+  content: MyContent
+  iteration_id: 1
+  hit: false
+
+two:
+  parent_id: 1
+  category: MyString
+  content: MyContent
+  iteration_id: 1
+  hit: true
