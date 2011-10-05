@@ -11,14 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111004160910) do
+ActiveRecord::Schema.define(:version => 20111005084629) do
+
+  create_table "iterations", :force => true do |t|
+    t.integer  "project_id"
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "exit_date"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "kpts", :force => true do |t|
     t.integer  "parent_id"
     t.string   "category"
+    t.boolean  "hit"
     t.string   "content"
     t.integer  "iteration_id"
-    t.boolean  "hit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

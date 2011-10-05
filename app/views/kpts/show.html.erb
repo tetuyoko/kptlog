@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Parent:</b>
+  <%= @kpt.parent_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @kpt.category %>
+</p>
+
+<p>
+  <b>Hit:</b>
+  <%= @kpt.hit %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @kpt.content %>
+</p>
+
+<p>
+  <b>Iteration:</b>
+  <%= @kpt.iteration_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_kpt_path(@kpt) %> |
+<%= link_to 'Back', kpts_path %>

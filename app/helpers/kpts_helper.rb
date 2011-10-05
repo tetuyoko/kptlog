@@ -1,0 +1,2 @@
+module KptsHelper
+end

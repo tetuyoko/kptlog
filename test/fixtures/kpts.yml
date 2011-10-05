@@ -3,13 +3,13 @@
 one:
   parent_id: 1
   category: MyString
-  content: MyContent
-  iteration_id: 1
   hit: false
+  content: MyString
+  iteration_id: 1
 
 two:
   parent_id: 1
-  category: MyString
-  content: MyContent
-  iteration_id: 1
+  category: keep
   hit: true
+  content: keptcontent
+  iteration_id: 2

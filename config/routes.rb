@@ -1,4 +1,10 @@
 Kptlog::Application.routes.draw do
+  resources :projects
+
+  resources :iterations
+
+  resources :kpts
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

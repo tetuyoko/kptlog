@@ -1,0 +1,31 @@
+<h1>Listing kpts</h1>
+
+<table>
+  <tr>
+    <th>Parent</th>
+    <th>Category</th>
+    <th>Hit</th>
+    <th>Content</th>
+    <th>Iteration</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @kpts.each do |kpt| %>
+  <tr>
+    <td><%= kpt.parent_id %></td>
+    <td><%= kpt.category %></td>
+    <td><%= kpt.hit %></td>
+    <td><%= kpt.content %></td>
+    <td><%= kpt.iteration_id %></td>
+    <td><%= link_to 'Show', kpt %></td>
+    <td><%= link_to 'Edit', edit_kpt_path(kpt) %></td>
+    <td><%= link_to 'Destroy', kpt, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Kpt', new_kpt_path %>
