@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1><strong><I><%= link_to('KPTlog',{:controller => 'kpts',:action => 'index'}) %></I></strong></h1>
+<hr>
+<h4>
+  <%= link_to('KPT',{:controller => 'kpts', :action => 'index'}) %>
+  <%= link_to('イテレーション',{:controller => 'iterations', :action => 'index'}) %>
+  <%= link_to('プロジェクト',{:controller => 'projects', :action => 'index'}) %>
+</h4>
+<hr>
 
 <%= yield %>
 
+<br>
+<br>
+<hr>
+<h4><%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %></h4>
 </body>
 </html>
