@@ -5,10 +5,10 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/ico" \>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
 </head>
 <body>
-<img src="/logo.png" />
+  <%= image_tag "logo.png"%>
 <hr>
 <h4>
   <%= link_to('KPT',{:controller => 'kpts', :action => 'index'}) %>
