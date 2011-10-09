@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111005084629) do
+ActiveRecord::Schema.define(:version => 20111009162353) do
 
   create_table "iterations", :force => true do |t|
     t.integer  "project_id"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(:version => 20111005084629) do
     t.integer  "parent_id"
     t.string   "category"
     t.boolean  "hit"
-    t.string   "content"
     t.integer  "iteration_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "body"
   end
 
   create_table "projects", :force => true do |t|
