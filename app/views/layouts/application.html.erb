@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>kptlog</title>
+  <title>KPTlog</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
-  <%= image_tag "/images/logo.png" %>
+  <%= image_tag "logo.png", :mouseover => image_path("MouseOver.png") %>
 <hr>
 <h4>
   <%= link_to('KPT',{:controller => 'kpts', :action => 'index'}) %>

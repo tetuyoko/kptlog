@@ -2,14 +2,14 @@
 
 one:
   parent_id: 1
-  category: MyString
+  category: keep 
   hit: false
-  content: MyString
+  body: MyString
   iteration_id: 1
 
 two:
   parent_id: 1
   category: keep
   hit: true
-  content: keptcontent
+  body: keptcontent
   iteration_id: 2
