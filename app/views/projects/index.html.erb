@@ -2,20 +2,16 @@
 <%= link_to '新しいプロジェクトを作る', new_project_path %>
 <br />
 <br />
-<table>
-  <tr>
-    <th>プロジェクト名</th>
-    <th>作成日</th>
-    <th>更新日</th>
-    <th></th>
-  </tr>
 
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= link_to project.name, edit_project_path(project) %></td> 
-    <td><%= project.created_at.strftime("%H:%M (%y/%m/%d)") %></td> 
-    <td><%= project.updated_at.strftime("%H:%M (%y/%m/%d)") %></td>
-   <td><%= link_to '削除', project, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <%= link_to project.name, edit_project_path(project) %>
+  |  <%= link_to '削除', project, confirm: 'Are you sure?', method: :delete %>
+    <ul>
+      <%project.iterations.each do |iteration| %>
+        <li><%= link_to iteration.name, edit_iteration_path(iteration) %>
+        |  <%= link_to '削除',iteration,confirm: 'Are you sure?', method: :delete  %></li>
+      <% end %>
+      <%= link_to '追加', new_iteration_path %>
+    </ul>
+    <br />
 <% end %>
-</table>
