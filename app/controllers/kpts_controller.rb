@@ -25,6 +25,7 @@ class KptsController < ApplicationController
   # GET /kpts/new.json
   def new
     @kpt = Kpt.new
+    @iterations = Iteration.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,7 +36,8 @@ class KptsController < ApplicationController
   # GET /kpts/1/edit
   def edit
     @kpt = Kpt.find(params[:id])
-  end
+    @iterations = Iteration.all
+ end
 
   # POST /kpts
   # POST /kpts.json

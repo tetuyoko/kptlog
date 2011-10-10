@@ -35,7 +35,7 @@ class IterationsController < ApplicationController
   # GET /iterations/1/edit
   def edit
     @iteration = Iteration.find(params[:id])
-  end
+ end
 
   # POST /iterations
   # POST /iterations.json

@@ -1,31 +1,27 @@
-<h1>Listing kpts</h1>
-
+<h2>KPT一覧</h2>
+<%= link_to '新しいKPTを作る', new_kpt_path %>
+<br />
+<br />
 <table>
   <tr>
-    <th>Parent</th>
-    <th>Category</th>
+    <th>関連KPT</th>
+    <th>カテゴリ</th>
     <th>Hit</th>
-    <th>Body</th>
-    <th>Iteration</th>
-    <th></th>
-    <th></th>
+    <th>本文</th>
+    <th>イテレーション</th>
     <th></th>
   </tr>
 
 <% @kpts.each do |kpt| %>
   <tr>
     <td><%= kpt.parent_id %></td>
-    <td><%= kpt.category %></td>
+    <td><%= link_to kpt.category, edit_kpt_path(kpt) %></td>
     <td><%= kpt.hit %></td>
     <td><%= kpt.body %></td>
     <td><%= kpt.iteration_id %></td>
-    <td><%= link_to 'Show', kpt %></td>
-    <td><%= link_to 'Edit', edit_kpt_path(kpt) %></td>
-    <td><%= link_to 'Destroy', kpt, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '削除', kpt, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Kpt', new_kpt_path %>

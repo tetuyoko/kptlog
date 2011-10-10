@@ -11,7 +11,7 @@
   </tr>
 
 <% @projects.each do |project| %>
-  <tr style="background-color:<%= cycle("#FFffFF", "FFff99") %>">
+  <tr>
     <td><%= link_to project.name, edit_project_path(project) %></td> 
     <td><%= project.created_at.strftime("%H:%M (%y/%m/%d)") %></td> 
     <td><%= project.updated_at.strftime("%H:%M (%y/%m/%d)") %></td>
@@ -19,6 +19,3 @@
   </tr>
 <% end %>
 </table>
-
-
-
