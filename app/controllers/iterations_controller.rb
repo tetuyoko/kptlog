@@ -25,6 +25,7 @@ class IterationsController < ApplicationController
   # GET /iterations/new.json
   def new
     @iteration = Iteration.new
+    @projects = Project.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,8 +35,9 @@ class IterationsController < ApplicationController
 
   # GET /iterations/1/edit
   def edit
+    @projects = Project.all
     @iteration = Iteration.find(params[:id])
- end
+  end
 
   # POST /iterations
   # POST /iterations.json
