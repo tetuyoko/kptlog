@@ -4,12 +4,14 @@
 <br />
 
 <% @projects.each do |project| %>
+<hr />
   <%= link_to project.name, edit_project_path(project) %>
   |  <%= link_to '削除', project, confirm: 'Are you sure?', method: :delete %>
     <ul>
       <%project.iterations.each do |iteration| %>
         <li><%= link_to iteration.name, edit_iteration_path(iteration) %>
-        |  <%= link_to '削除',iteration,confirm: 'Are you sure?', method: :delete  %></li>
+        |  <%= link_to '削除',iteration,confirm: 'Are you sure?', method: :delete %>
+        | KPT</li>
       <% end %>
       <%= link_to '追加', new_iteration_path %>
     </ul>
