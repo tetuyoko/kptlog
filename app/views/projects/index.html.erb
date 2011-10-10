@@ -1,23 +1,24 @@
-<h1>Listing projects</h1>
-
-<table>
+<h2>プロジェクト一覧</h2>
+<%= link_to '新しいプロジェクトを作る', new_project_path %>
+<br />
+<br />
+<table border=1>
   <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
+    <th>プロジェクト名</th>
+    <th>作成日</th>
+    <th>更新日</th>
     <th></th>
   </tr>
 
 <% @projects.each do |project| %>
   <tr style="background-color:<%= cycle("#FFffFF", "FFff99") %>">
-    <td><%= project.name %></td> 
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to project.name, edit_project_path(project) %></td> 
+    <td><%= project.created_at.strftime("%H:%M (%y/%m/%d)") %></td> 
+    <td><%= project.updated_at.strftime("%H:%M (%y/%m/%d)") %></td>
+   <td><%= link_to '削除', project, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Project', new_project_path %>
+
