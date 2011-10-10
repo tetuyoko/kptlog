@@ -9,8 +9,8 @@
   </tr>
 
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
+  <tr style="background-color:<%= cycle("#FFffFF", "FFff99") %>">
+    <td><%= project.name %></td> 
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
