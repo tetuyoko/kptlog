@@ -10,11 +10,16 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :project_id %><br />
-    <%= f.collection_select(:project_id, @projects, :id,:name) %>
-  </div>
+  
+  <% # TODO: 追加ボタンの、new呼び出しに対応させる %>
+  <%= field_set_tag 'プロジェクト情報' do %>
+    <% fields_for @iteration.project do |pi| %>
+      <div class="field">
+        <%= pi.label :name, 'プロジェクト名：　'  %>
+        <%= pi.label :name, @iteration.project.name %><br />
+      </div>
+    <% end %>
+  <% end %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

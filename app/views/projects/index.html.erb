@@ -13,7 +13,7 @@
         |  <%= link_to '削除',iteration,confirm: 'Are you sure?', method: :delete %>
         | KPT</li>
       <% end %>
-      <%= link_to '追加', new_iteration_path %>
+      <%= link_to '追加', new_iteration_path(project) %>
     </ul>
     <br />
 <% end %>

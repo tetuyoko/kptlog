@@ -6,16 +6,16 @@
  *= require_tree . 
 */
 body {
-  margin-left: 30px;
-  padding-left: 30px; 
+  margin-left: 20px;
+  padding-left:1 0px; 
 }
 
 table {
-  margin-left: 30px;
+  margin-left: 20px;
   border: 2px solid;
   border-collapse: collapse;
 }
 td, th {
-  margin-left: 30px;
+  margin-left: 10px;
   border: 2px solid;
 }

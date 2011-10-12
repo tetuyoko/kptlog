@@ -15,6 +15,7 @@ Kptlog::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
+  # TODO: don't do live compile
   config.assets.compile = true 
 
   # Generate digests for assets URLs
