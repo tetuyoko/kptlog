@@ -21,22 +21,36 @@ class IterationsController < ApplicationController
     end
   end
 
-  # GET /iterations/new
-  # GET /iterations/new.json
-  def new
+  # add method. 
+  # param is project_id. 
+  # GET /iterations/1/add
+  # GET /iterations/1/add.json
+  def add 
     @iteration = Iteration.new
-    @project = Project.all
+    @project = Project.find(params[:id])
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # add.html.erb
       format.json { render json: @iteration }
     end
   end
 
+  # GET /iterations/new
+  # GET /iterations/new.json
+   def new
+     @iteration = Iteration.new
+     @project = Project.all
+  
+     respond_to do |format|
+       format.html # new.html.erb
+       format.json { render json: @iteration }
+     end
+   end
+
   # GET /iterations/1/edit
   def edit
    @iteration = Iteration.find(params[:id])
-   @project = Project.all
+   @project = @iteration.project
   end
 
   # POST /iterations

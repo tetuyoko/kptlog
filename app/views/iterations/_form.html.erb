@@ -11,12 +11,12 @@
     </div>
   <% end %>
   
-  <% # TODO: 追加ボタンの、new呼び出しに対応させる %>
+  <% # TODO: 追加ボタンの、add呼び出しに対応させる %>
   <%= field_set_tag 'プロジェクト情報' do %>
-    <% fields_for @iteration.project do |pi| %>
+    <% fields_for @project do |p| %>
       <div class="field">
-        <%= pi.label :name, 'プロジェクト名：　'  %>
-        <%= pi.label :name, @iteration.project.name %><br />
+       <%= p.label :name, 'プロジェクト名：　'  %>
+       <%= p.label :name, @project.name %><br />
       </div>
     <% end %>
   <% end %>
