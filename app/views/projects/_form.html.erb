@@ -16,11 +16,12 @@
     <%= f.text_field :name %>
   </div>
 
-  <% f.fields_for :iterations do |iteration_form| %>
+<h3>fine</h3>
+  <%= f.fields_for :iterations do |i| %>
     <div class="field">
-      <%= iteration_form.label :name %><br />
-      <%= iteration_form.text_field :name %>
-    </div>
+      <%= i.label :name,'イテレーション名' %><br />
+      <%= i.text_field :name %>
+  </div>
   <% end %>
 
   <div class="actions">
