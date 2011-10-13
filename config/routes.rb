@@ -1,10 +1,7 @@
 Kptlog::Application.routes.draw do
-  resources :projects
 
-  resources :iterations do
-    member do
-      get 'add'
-    end
+  resources :projects do
+    resources :iterations
   end
 
   resources :kpts
