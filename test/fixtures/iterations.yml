@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  project_id: 298486374 
-  name: MyString
+  project_id: 
+  name: iteration1 
   start_date: 2011-10-05
   exit_date: 2011-10-05
-  status: MyString
+  status: statu 
 
 two:
-  project_id: 1
-  name: MyString
+  project_id: 
+  name: iteration2 
   start_date: 2011-10-05
   exit_date: 2011-10-05
-  status: MyString
+  status: stat 
