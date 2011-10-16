@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <h2>プロジェクト一覧</h2>
 <%= link_to '新しいプロジェクトを作る', new_project_path %>
 <br />
@@ -5,12 +6,11 @@
 
 <% @projects.each do |project| %>
 <hr />
-  <%= link_to project.name, edit_project_path(project) %>
+  <%= link_to project.name, project %>
   |  <%= link_to '削除', project, confirm: 'Are you sure?', method: :delete %>
     <ul>
       <%  project.iterations.each do |iteration| %>
-       <li><%= iteration.name %>
-        | KPT</li>
+        <li><%= iteration.name %></li>
       <% end %>
     </ul>
     <br />
