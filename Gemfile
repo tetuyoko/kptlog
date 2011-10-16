@@ -19,7 +19,10 @@ end
 gem 'jquery-rails'
 
 
-#to fix execjs.2011/10/01 tyokoyama
+# Rack 1.4bugs
+gem 'rack', '1.3.3'
+
+# to fix execjs.2011/10/01 tyokoyama
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
 
