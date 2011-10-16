@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Project_Name:</b>
   <%= @project.name %>
+  <br />
+  <b>Iteration_Name:</b>
+  <% @project.iterations.each do |i| %>
+    <p><%= i.name %></p>
+  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_iteration_path(@project) %> |
+<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

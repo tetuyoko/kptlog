@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  project_id: 1
+  project_id: 298486374 
   name: MyString
   start_date: 2011-10-05
   exit_date: 2011-10-05
