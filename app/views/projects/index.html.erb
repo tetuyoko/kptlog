@@ -7,11 +7,5 @@
 <% @projects.each do |project| %>
 <hr />
   <%= link_to project.name, project %>
-  |  <%= link_to '削除', project, confirm: 'Are you sure?', method: :delete %>
-    <ul>
-      <%  project.iterations.each do |iteration| %>
-        <li><%= iteration.name %></li>
-      <% end %>
-    </ul>
-    <br />
+  <h5><%= "#{project.iterations.size} iterations"%></h5>
 <% end %>
