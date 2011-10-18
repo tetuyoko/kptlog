@@ -2,7 +2,7 @@
 
 class Project < ActiveRecord::Base
   has_many :iterations
-  accepts_nested_attributes_for :iterations
+  accepts_nested_attributes_for :iterations, :allow_destroy => true
 
   validates :name,
     :presence => {

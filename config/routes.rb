@@ -1,7 +1,7 @@
 Kptlog::Application.routes.draw do
 
   resources :projects do
-    resources :iterations
+    resources :iterations, :on => :collection
   end
 
   resources :kpts

@@ -19,7 +19,9 @@
   <%= f.fields_for :iterations do |i| %>
     <div class="field">
       <ul>
-         <%= i.text_field :name %>
+        <%= i.label 'イテレーション名：' %>
+        <%= i.text_field :name %>
+        <%= link_to '削除..したい', edit_project_path(@project) , {confirm: 'ほんとに削除していいですか？', method: :delete}  %>
       </ul>
     </div>
   <% end %>

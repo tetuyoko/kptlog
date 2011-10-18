@@ -11,7 +11,7 @@
   </ul>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %> |
-<%= link_to '削除', @project, confirm: 'Are you sure?', method: :delete %>
+<%= link_to '編集する', edit_project_path(@project) %> |
+<%= link_to '一覧に戻る', projects_path %> |
+<%= link_to 'プロジェクトを削除する', @project, confirm: 'ほんとに削除していいですか?', method: :delete %>
 
