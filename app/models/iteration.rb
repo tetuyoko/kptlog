@@ -5,9 +5,6 @@ class Iteration < ActiveRecord::Base
   has_one :kpt
 
   validates :name,
-    :presence => {
-      :message => 'は必須です。' 
-    },
     :uniqueness => {
       :allow_blank => true,
       :message => 'その名称は既に使われています。'
