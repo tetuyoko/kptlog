@@ -10,17 +10,13 @@
 <body>
   <%= image_tag "logo.png", :mouseover => image_path("MouseOver.png") %>
 <hr>
-<h4>
-  <%= link_to('KPT',{:controller => 'kpts', :action => 'index'}) %>
-  <%= link_to('プロジェクト',{:controller => 'projects', :action => 'index'}) %>
-</h4>
-<hr>
 
 <%= yield %>
 
 <br>
 <br>
 <hr>
-<h4><%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %></h4>
+<%= link_to('プロジェクト', 'projects') %>
+<%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %>
 </body>
 </html>

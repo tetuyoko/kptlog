@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h2>プロジェクト一覧</h2>
 <%= link_to '新しいプロジェクトを作る', new_project_path %>
-<br />
-<br />
-
 <% @projects.each do |project| %>
 <hr />
   <%= link_to project.name, project %>
