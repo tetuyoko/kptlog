@@ -2,7 +2,9 @@
 
 class Iteration < ActiveRecord::Base
   belongs_to :project
-  has_one :kpt
+  has_many :kpts
+  accepts_nested_attributes_for :kpts, :allow_destroy => true
+
 
   validates :name,
     :uniqueness => {
