@@ -10,13 +10,13 @@
 <body>
   <%= image_tag "logo.png", :mouseover => image_path("MouseOver.png") %>
 <hr>
+<%= link_to('>> プロジェクト一覧', '/projects') %>
 
 <%= yield %>
 
 <br>
 <br>
 <hr>
-<%= link_to('プロジェクト', 'projects') %>
 <%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %>
 </body>
 </html>
