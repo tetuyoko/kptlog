@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class KptsController < ApplicationController
   # GET /kpts
   # GET /kpts.json
@@ -46,7 +48,8 @@ class KptsController < ApplicationController
 
     respond_to do |format|
       if @kpt.save
-        format.html { redirect_to @kpt, notice: 'Kpt was successfully created.' }
+        format.html { redirect_to "/kpts", notice: "#{@kpt.category}ga
+          作られました。" }
         format.json { render json: @kpt, status: :created, location: @kpt }
       else
         format.html { render action: "new" }
@@ -62,7 +65,7 @@ class KptsController < ApplicationController
 
     respond_to do |format|
       if @kpt.update_attributes(params[:kpt])
-        format.html { redirect_to @kpt, notice: 'Kpt was successfully updated.' }
+        format.html { redirect_to '/kpts', notice: "#{@kpt.category}が更新されました。"}
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -75,10 +78,11 @@ class KptsController < ApplicationController
   # DELETE /kpts/1.json
   def destroy
     @kpt = Kpt.find(params[:id])
+    kpt_category = @kpt.category
     @kpt.destroy
 
     respond_to do |format|
-      format.html { redirect_to kpts_url }
+      format.html { redirect_to kpts_url, notice: "#{kpt_category}が削除されました。" }
       format.json { head :ok }
     end
   end

@@ -1,7 +1,7 @@
 <%= form_for(@kpt) do |f| %>
   <% if @kpt.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@kpt.errors.count, "error") %> prohibited this kpt from being saved:</h2>
+      <h2><%= "#{@kpt.errors.count}件のエラー" %> が発生しているため保存しませんでした。</h2>
 
       <ul>
       <% @kpt.errors.full_messages.each do |msg| %>

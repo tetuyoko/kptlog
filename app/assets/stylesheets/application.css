@@ -8,26 +8,34 @@
 body {
   position: relative;
   Text-align: center; 
-  background-color: red;
+  background-color: #CC999C;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
 }
 
+#main_title { 
+  font-size: 54px;
+  font-weight: bold; }
+
+#info {
+  position: relative;
+  float: right; 
+  bottom: -40px; 
+  font-family: cursive; }
 #header {
   width: 800px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
   Text-align: left;
   color: #CC99CC;
   background-color: white;
 }
 
 #contents {
-  top: -20px;
   width: 800px;
   background-color: white;
-  height: 800px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -45,7 +53,7 @@ body {
 
 table {
   position: relative;
-  Text-align: left
+  Text-align: left;
 }
 
 td, th {

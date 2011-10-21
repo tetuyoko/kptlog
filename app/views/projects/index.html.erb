@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
-<h2>プロジェクト一覧</h2>
-<%= link_to '新しいプロジェクトを作る', new_project_path %>
+<span id="notice"><%= notice %></span>
+<span id="title">Project List</span>
+<span id="act"><%= link_to '新しいプロジェクトを作る', new_project_path %></span>
 <% @projects.each do |project| %>
-<hr />
+  <hr />
   <%= link_to project.name, project %>
   <div id="topics"><%= "#{project.iterations.size} iterations"%></div> 
 <% end %>

@@ -21,7 +21,7 @@
       <ul>
         <%= i.label 'イテレーション名：' %>
         <%= i.text_field :name %>
-        <%= link_to '削除..したい', edit_project_path(@project) , {confirm: 'ほんとに削除していいですか？', method: :delete}  %>
+        <%= link_to '削除', edit_project_path(@project) , {confirm: 'ほんとに削除していいですか？', method: :delete}  %>
       </ul>
     </div>
   <% end %>

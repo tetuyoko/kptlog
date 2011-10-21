@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>KPTlog</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'favicon.ico' %>
-</head>
-<body>
-  <div id="header">
-  <%= image_tag "logo.png", :mouseover => image_path("MouseOver.png") %>
-<%= link_to('>> Project List', '/projects') %>
-<%= link_to('>> KPTList', '/kpts') %>
-</div>
-  <div id="contents">
-    
-    <%= yield %>
-    
-</div>
-<div id="footer">
-  <%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %>
-</div>
-</body>
+  <head>
+    <title>KPTlog</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <div id="header">
+      <span id="main_title">KPTlog</span>
+      <span id="info">
+        <%= link_to('>> Project List', '/projects') %>  
+        <%= link_to('>> KPTList', '/kpts') %>
+      </span>
+      Logging your kpts per iteration.
+    </div>
+    <div id="contents">
+      
+      <%= yield %>
+      
+    </div>
+    <div id="footer">
+      <hr />
+      <%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %>
+    </div>
+  </body>
 </html>
