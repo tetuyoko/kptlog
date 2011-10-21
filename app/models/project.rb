@@ -5,9 +5,7 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :iterations, :allow_destroy => true
 
   validates :name,
-    :presence => {
-      :message => 'は必須です。' 
-    },
+    :presence => {:message => 'は必須です。' },
     :uniqueness => {
       :allow_blank => true,
       :message => 'その名称は既に使われています。'

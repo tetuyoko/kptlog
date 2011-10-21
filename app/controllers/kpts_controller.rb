@@ -43,8 +43,10 @@ class KptsController < ApplicationController
 
   # POST /kpts
   # POST /kpts.json
+  #=TODO create kpt controller
   def create
     @kpt = Kpt.new(params[:kpt])
+    @iteration = Iteration.find(params[:iteration_id])
 
     respond_to do |format|
       if @kpt.save
