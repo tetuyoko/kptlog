@@ -8,15 +8,18 @@
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
+  <div id="header">
   <%= image_tag "logo.png", :mouseover => image_path("MouseOver.png") %>
-<hr>
-<%= link_to('>> プロジェクト一覧', '/projects') %>
-
-<%= yield %>
-
-<br>
-<br>
-<hr>
-<%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %>
+<%= link_to('>> Project List', '/projects') %>
+<%= link_to('>> KPTList', '/kpts') %>
+</div>
+  <div id="contents">
+    
+    <%= yield %>
+    
+</div>
+<div id="footer">
+  <%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %>
+</div>
 </body>
 </html>
