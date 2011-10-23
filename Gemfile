@@ -18,7 +18,6 @@ end
 
 gem 'jquery-rails'
 
-
 # Rack 1.4bugs
 gem 'rack', '1.3.3'
 
@@ -34,9 +33,12 @@ gem 'therubyracer', :platforms => :ruby
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-
+gem "rspec-rails", :group => [:test, :development]
 group :test do
-  # Pretty printed test output
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "spork", "> 0.9.0.rc"
   gem 'turn', :require => false
 end
 
