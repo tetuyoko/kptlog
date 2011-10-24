@@ -4,5 +4,5 @@
 <% @projects.each do |project| %>
   <hr />
   <%= link_to project.name, project %>
-  <div id="topics"><%= "#{project.iterations.size} iterations"%></div> 
+  <div id="topics"><%= "#{project.iterations.size} iterations" %></div> 
 <% end %>

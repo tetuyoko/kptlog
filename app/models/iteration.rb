@@ -7,8 +7,5 @@ class Iteration < ActiveRecord::Base
 
 
   validates :name,
-    :uniqueness => {
-      :allow_blank => true,
-      :message => 'その名称は既に使われています。'
-    }
+      :presence => {:message => "は必須です。"} 
 end
