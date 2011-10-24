@@ -2,14 +2,15 @@ require 'spec_helper'
 
 describe "project" do
   before do 
-    @project = Project.all 
+    @projects = Project.all 
   end
 
   it "should be empty" do
-   @project.size.should == 2 
+   @projects.size.should == 2 
   end
 
-  it "test" do
-    1.should == 1
+  it "should be name" do
+    project = @projects.first
+    project.name.should == "project2" 
   end
 end

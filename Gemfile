@@ -33,12 +33,15 @@ gem 'therubyracer', :platforms => :ruby
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-gem "rspec-rails", :group => [:test, :development]
-group :test do
+group :test, :development  do
+  gem "rspec-rails"
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
   gem "spork", "> 0.9.0.rc"
+  gem "guard-spork"
+  gem "libnotify"
+  gem "rb-inotify"
   gem 'turn', :require => false
 end
 
