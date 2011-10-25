@@ -49,7 +49,7 @@ class KptsController < ApplicationController
     # @iteration = Iteration.find(params[:iteration_id])
 
     respond_to do |format|
-      if @kpt.update_status && @kpt.save
+      if @kpt.set_tag_body && @kpt.save
         format.html { redirect_to "/kpts", notice: "#{@kpt.category}が
           作られました。" }
         format.json { render json: @kpt, status: :created, location: @kpt }
