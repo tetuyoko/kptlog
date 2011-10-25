@@ -13,7 +13,14 @@ describe "kpt" do
   end
 
   it "update status" do
-    @kpt.update_status
+    @kpt.set_tag_body
     @kpt.body.should == "[#keep]hoge"
   end
+
+ # it "not push tags when tags already" do
+ #   @kpt.body = "[#try]hoge"
+ #   @kpt.update_status
+ #   @kpt.body.should == "[#try]hoge"
+ # end
+
 end

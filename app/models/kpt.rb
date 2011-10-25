@@ -6,7 +6,7 @@ class Kpt < ActiveRecord::Base
   validates :category,
     :presence => {:message => 'は必須です。'}
 
-  def update_status
-     self.body = "[##{self.category}]".concat self.body
+  def set_tag_body
+    self.body = "[##{self.category}]".concat self.body
   end
 end

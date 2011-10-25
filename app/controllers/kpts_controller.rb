@@ -64,9 +64,10 @@ class KptsController < ApplicationController
   # PUT /kpts/1.json
   def update
     @kpt = Kpt.find(params[:id])
-
+    @kpt.attributes = params[:kpt]
+ 
     respond_to do |format|
-      if @kpt.update_attributes(params[:kpt])
+     if @kpt.set_tag_body && @kpt.save
         format.html { redirect_to '/kpts', notice: "#{@kpt.category}が更新されました。"}
         format.json { head :ok }
       else
