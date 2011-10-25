@@ -46,11 +46,11 @@ class KptsController < ApplicationController
   #=TODO create kpt controller
   def create
     @kpt = Kpt.new(params[:kpt])
-    @iteration = Iteration.find(params[:iteration_id])
+    # @iteration = Iteration.find(params[:iteration_id])
 
     respond_to do |format|
-      if @kpt.save
-        format.html { redirect_to "/kpts", notice: "#{@kpt.category}ga
+      if @kpt.update_status && @kpt.save
+        format.html { redirect_to "/kpts", notice: "#{@kpt.category}が
           作られました。" }
         format.json { render json: @kpt, status: :created, location: @kpt }
       else

@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :iteration_id %><br />
-    <%= f.collection_select(:iteration_id, @iterations, :id, :name) %>
+    <%= f.text_field :iteration_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
