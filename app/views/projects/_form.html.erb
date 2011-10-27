@@ -12,30 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'プロジェクト名' %><br />
-    <%= f.text_field :name %>
+    <% if @project.name.nil? %>
+      <%= f.label 'プロジェクト名' %>
+      <%= f.text_field :name %>
+    <% end %>
   </div>
 
-  <%= f.fields_for :iterations do |i| %>
-    <div class="field">
-      <ul>
-        <%= i.label 'イテレーション名：' %><br />
-        <%= i.text_field :name %>
-        <%= link_to '削除', edit_project_path(@project) , {confirm: 'ほんとに削除していいですか？', method: :delete}  %>
-      <div class="field">
-        <%= i.label :start_date %><br />
-        <%= i.date_select :start_date %>
-      </div>
-      <div class="field">
-        <%= i.label :exit_date %><br />
-        <%= i.date_select :exit_date %>
-      </div>
-      <div class="field">
-        <%= i.label :status %><br />
-        <%= i.text_field :status %>
-      </div>
-      </ul>
-    </div>
+  <%= field_set_tag 'イテレーション情報' do %>
+    <%= f.fields_for :iterations do |i| %>
+      <%= i.text_field :name, :size => 15 %><br />
+      <%= i.date_select :start_date %> To
+      <%= i.date_select :exit_date %>
+      <br />
+      <br />
+    <% end %>
   <% end %>
   <div class="actions">
     <%= f.submit %>

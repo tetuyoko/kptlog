@@ -3,6 +3,6 @@
 <span id="act"><%= link_to '新しいプロジェクトを作る', new_project_path %></span>
 <% @projects.each do |project| %>
   <hr />
-  <%= link_to project.name, project %>
+  <%= link_to project.name, edit_project_path(project) %>
   <div id="topics"><%= "#{project.iterations.size} iterations" %></div> 
 <% end %>

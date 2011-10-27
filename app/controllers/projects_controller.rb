@@ -38,8 +38,8 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     if @project.iterations.empty?
-      5.times do
-        @project.iterations.build
+      5.times do |n|
+        @project.iterations.build({:name => "イテレーション#{n+1}"})
       end
     end
   end
