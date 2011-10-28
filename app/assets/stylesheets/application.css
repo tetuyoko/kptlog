@@ -7,23 +7,17 @@
 */
 body {
   position: relative;
-  Text-align: center; 
-  background-color: #CC999C;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
 }
 
 #main_title { 
-  font-size: 54px;
+  font-size: 24px;
   font-weight: bold; }
-
 #info {
-  position: relative;
   float: right; 
-  bottom: -40px; 
   font-family: cursive; }
 #header {
-  width: 800px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -36,6 +30,7 @@ body {
 #contents {
   width: 800px;
   background-color: white;
+  Text-align: center; 
   position: relative;
   margin-left: auto;
   margin-right: auto;
