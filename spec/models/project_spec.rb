@@ -1,11 +1,9 @@
 require 'spec_helper'
 
-describe "project" do
+describe Project do
   before do 
     @project = Project.new({:name => "project2"}) 
   end
-
-  it "should be name" do
-   @project.name.should == "project2" 
-  end
+  subject {@project.name}
+  it {should eq "project2"} 
 end

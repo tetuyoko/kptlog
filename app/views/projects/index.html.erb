@@ -4,5 +4,10 @@
 <% @projects.each do |project| %>
   <hr />
   <%= link_to project.name, edit_project_path(project) %>
-  <div id="topics"><%= "#{project.iterations.size} iterations" %></div> 
+  <div id="topics">
+  <% project.iterations.each do |i| %>
+    \__<%= "#{i.name} has #{i.kpts.size} kpts" %><br/> 
+  <% end %>
+  <br />
+  </div> 
 <% end %>

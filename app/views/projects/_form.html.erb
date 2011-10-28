@@ -12,13 +12,12 @@
   <% end %>
 
   <div class="field">
-    <% if @project.name.nil? %>
-      <%= f.label 'プロジェクト名' %>
+    <% if @project.name.nil? || @project.name.empty?  %>
+      <%= f.label 'プロジェクト名' %><br />
       <%= f.text_field :name %>
     <% end %>
   </div>
 
-  <%= field_set_tag 'イテレーション情報' do %>
     <%= f.fields_for :iterations do |i| %>
       <%= i.text_field :name, :size => 15 %><br />
       <%= i.date_select :start_date %> To
@@ -26,7 +25,6 @@
       <br />
       <br />
     <% end %>
-  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
