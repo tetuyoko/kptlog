@@ -1,12 +1,19 @@
 require 'spec_helper'
 
-describe "iteration" do
+describe Iteration do
+  
   before do 
     @iteration = Iteration.new({:name => "iteration", :status => "active" }) 
   end
 
-  it "should be name" do
-   @iteration.name.should == "iteration" 
-   @iteration.status.should == "active" 
+  describe '#name' do
+    subject {@iteration.name}
+    it {should eq "iteration"} 
   end
+
+  describe '#status' do
+    subject {@iteration.status}
+    it {should eq "active"} 
+  end
+
 end

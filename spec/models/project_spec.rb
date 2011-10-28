@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Project do
+describe Project, '#name' do
   before do 
     @project = Project.new({:name => "project2"}) 
   end

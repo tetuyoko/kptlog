@@ -1,20 +1,19 @@
 require 'spec_helper'
 
-describe "kpt" do
+describe Kpt do
   before do 
-    @kpt = Kpt.new({
-      :category => "keep",
-      :body => "hoge"
-    }) 
+    @kpt = Kpt.new({:category => "keep",:body => "hoge"}) 
   end
 
-  it "should be name" do
-    @kpt.category.should == "keep" 
+  describe '#category' do
+    subject {@kpt.category}
+    it {should eq "keep"} 
   end
 
-  it "update status" do
-    @kpt.set_tag_body
-    @kpt.body.should == "[#keep]hoge"
+  describe "#set_tag_body" do
+    let(:concated_value){ "[#keep]hoge" }
+    subject {@kpt.set_tag_body}
+    it {should eq concated_value }
   end
 
  # it "not push tags when tags already" do
