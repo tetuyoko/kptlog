@@ -1,0 +1,20 @@
+<% content_for :content do %>
+<div id="header">
+  <span id="main_title">KPTlog</span>
+    Logging your kpts per iteration.
+    <span id="info">
+      <%= link_to('>> Project List', '/projects') %>  
+      <%= link_to('>> KPTList', '/kpts') %>
+    </span>
+</div>
+
+<div id="Container">
+<%= yield %>
+</div>
+
+<div id="footer">
+<hr />
+  <%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %>
+</div>
+<% end %>
+<%= render :template => 'layouts/application' %>

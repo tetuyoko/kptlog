@@ -8,22 +8,8 @@
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body>
-    <div id="header">
-      <span id="main_title">KPTlog</span>
-      <span id="info">
-        <%= link_to('>> Project List', '/projects') %>  
-        <%= link_to('>> KPTList', '/kpts') %>
-      </span>
-      Logging your kpts per iteration.
-    </div>
-    <div id="contents">
-      
-      <%= yield %>
-      
-    </div>
-    <div id="footer">
-      <hr />
-      <%= link_to('githubリポジトリを見る','http://github.com/tetuyoko/kptlog') %>
-    </div>
+
+    <%= content_for?(:content) ? yield(:content) :yield %>
+
   </body>
 </html>
