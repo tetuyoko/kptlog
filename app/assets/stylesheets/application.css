@@ -18,7 +18,11 @@ body {
 
 #info {
   float: right; 
-  font-family: cursive; }
+  font-family: cursive;
+  width: 200px;
+  background-color: black;
+  color: orange;
+}
 
 #header {
   width: 800px;
