@@ -1,19 +1,14 @@
+#coding: utf-8
 require 'spec_helper'
 
 describe Iteration do
   
-  before do 
-    @iteration = Iteration.new({:name => "iteration", :status => "active" }) 
-  end
-
   describe '#name' do
-    subject {@iteration.name}
-    it {should eq "iteration"} 
-  end
-
-  describe '#status' do
-    subject {@iteration.status}
-    it {should eq "active"} 
+    context '名前をいれただけ' do
+      before { @iteration = Iteration.new({:name => "iteration"}) } 
+      subject { @iteration }
+      its(:name) { should eq "iteration" } 
+    end
   end
 
 end
