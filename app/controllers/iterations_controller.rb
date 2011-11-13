@@ -54,19 +54,11 @@ class IterationsController < ApplicationController
   end
 
   # POST /iterations
-  # POST /iterations.json
   def create
-    @iteration = Iteration.new(params[:iteration])
+    @project = Project.find(params[:project_id])
+    @iteration = @project.iterations.create(params[:iteration])
 
-    respond_to do |format|
-      if @iteration.save
-        format.html { redirect_to @iteration, notice: 'Iteration was successfully created.' }
-        format.json { render json: @iteration, status: :created, location: @iteration }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @iteration.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to project_path(@project)
   end
 
   # PUT /iterations/1

@@ -1,24 +1,19 @@
 <h2>イテレーション一覧</h2>
-<%= link_to '新しいイテレーションを作る', new_iteration_path %>
-<br />
-<br />
 <table>
   <tr>
     <td>プロジェクトID</td>
     <td>イテレーション名</td>
+    <td>ステータス</td>
     <td>開始日</td>
     <td>終了日</td>
-    <td>ステータス</td>
-    <td></td>
   </tr>
   <% @iterations.each do |iteration| %>
     <tr>
       <td><%= iteration.project_id %></td>
-      <td><%= link_to iteration.name,  edit_iteration_path(iteration) %></td>
+      <td><%= iteration.name %></td>
+      <td><%= iteration.status %></td>
       <td><%= iteration.start_date %></td>
       <td><%= iteration.exit_date %></td>
-      <td><%= iteration.status %></td>
-      <td><%= link_to '削除', iteration, confirm: 'Are you sure?', method: :delete %></td>
     </tr>
   <% end %>
 

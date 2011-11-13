@@ -3,20 +3,31 @@
 <p>
   <b>プロジェクト:</b>
   <%= @project.name %>
-  <br />
-  <ul>
-    <% @project.iterations.each do |i| %>
-      <li><%= i.name %></li>
-      <% unless i.kpts.empty? %>
-        <ul>
-          <% i.kpts.each do |kpt| %>
-            <li><%= kpt.body %>(<%= kpt.category %>)</li>
-          <% end %>
-        </ul>
-      <% end %>
-    <% end %>
- </ul>
 </p>
+
+<h2>Add a Iteration:</h2>
+<%= form_for([@project,@project.iterations.build]) do |f| %>
+  <div class="field">
+   <%= f.label :name %>
+   <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_date %><br />
+    <%= f.date_select :exit_date %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to '編集する', edit_project_path(@project) %> |
 <%= link_to '一覧に戻る', projects_path %> |

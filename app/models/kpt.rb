@@ -7,6 +7,6 @@ class Kpt < ActiveRecord::Base
     :presence => {:message => 'は必須です。'}
 
   def set_tag_body
-    self.body = "[##{self.category}]".concat self.body
+    self.body = "[#{self.category}]".concat self.body
   end
 end
