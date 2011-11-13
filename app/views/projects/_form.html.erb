@@ -1,4 +1,5 @@
-<%= form_for(@project) do |f| %>
+<% @project.tags.build  %>
+<%= form_for(@project) do |project_form| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= "#{@project.errors.count}件のエラー" %> が発生しているため保存しませんでした。</h2>
@@ -12,20 +13,13 @@
   <% end %>
 
   <div class="field">
-    <% if @project.name.nil? || @project.name.empty?  %>
-      <%= f.label 'プロジェクト名' %><br />
-      <%= f.text_field :name %>
-    <% end %>
+      <%= project_form.label 'プロジェクト名' %><br />
+      <%= project_form.text_field :name %>
   </div>
-
-    <%= f.fields_for :iterations do |i| %>
-      <%= i.text_field :name, :size => 15 %><br />
-      <%= i.date_select :start_date %> To
-      <%= i.date_select :exit_date %>
-      <br />
-      <br />
-    <% end %>
+  <h2>Tags</h2>
+  <%= render :partial => 'tags/form',
+             :locals => {:form => project_form} %>
   <div class="actions">
-    <%= f.submit %>
+    <%= project_form.submit %>
   </div>
 <% end %>

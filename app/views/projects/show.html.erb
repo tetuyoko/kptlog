@@ -5,6 +5,11 @@
   <%= @project.name %>
 </p>
 
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@project) %>
+</p>
+
 <h2>Iterations:</h2>
 <%= render @project.iterations %>
 
