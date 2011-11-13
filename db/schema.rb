@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113103209) do
+ActiveRecord::Schema.define(:version => 20111009162353) do
 
   create_table "iterations", :force => true do |t|
     t.integer  "project_id"
@@ -38,14 +38,5 @@ ActiveRecord::Schema.define(:version => 20111113103209) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tags", ["project_id"], :name => "index_tags_on_project_id"
 
 end
