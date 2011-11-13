@@ -1,8 +1,8 @@
 # coding: utf-8
 
 class Project < ActiveRecord::Base
-  has_many :iterations
-  accepts_nested_attributes_for :iterations, :allow_destroy => true
+  has_many :iterations, :dependent => :destroy
+#  accepts_nested_attributes_for :iterations, :allow_destroy => true
 
   validates :name,
     :presence => {:message => 'は必須です。' },

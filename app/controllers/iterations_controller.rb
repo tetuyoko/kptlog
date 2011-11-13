@@ -53,16 +53,12 @@ class IterationsController < ApplicationController
    @project = @iteration.project
   end
 
-  # POST /iterations
   def create
     @project = Project.find(params[:project_id])
     @iteration = @project.iterations.create(params[:iteration])
-
     redirect_to project_path(@project)
   end
 
-  # PUT /iterations/1
-  # PUT /iterations/1.json
   def update
     @iteration = Iteration.find(params[:id])
 
@@ -77,15 +73,11 @@ class IterationsController < ApplicationController
     end
   end
 
-  # DELETE /iterations/1
-  # DELETE /iterations/1.json
   def destroy
-    @iteration = Iteration.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @iteration = @project.iterations.find(params[:id])
     @iteration.destroy
-
-    respond_to do |format|
-      format.html { redirect_to iterations_url }
-      format.json { head :ok }
-    end
+    redirect_to project_path(@project)
   end
+
 end

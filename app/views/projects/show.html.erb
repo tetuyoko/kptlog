@@ -5,30 +5,13 @@
   <%= @project.name %>
 </p>
 
+<h2>Iterations:</h2>
+<%= render @project.iterations %>
+
 <h2>Add a Iteration:</h2>
-<%= form_for([@project,@project.iterations.build]) do |f| %>
-  <div class="field">
-   <%= f.label :name %>
-   <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :exit_date %><br />
-    <%= f.date_select :exit_date %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="action">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render "iterations/form" %>
 
-
+<br />
 <%= link_to '編集する', edit_project_path(@project) %> |
 <%= link_to '一覧に戻る', projects_path %> |
 <%= link_to 'プロジェクトを削除する', @project, confirm: 'ほんとに削除していいですか?', method: :delete %>
