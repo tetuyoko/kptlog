@@ -5,11 +5,14 @@
   <%= @project.name %>
 </p>
 
-<h2>Iterations:</h2>
-<%= render @project.iterations %>
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@project) %>
+</p>
 
-<h2>Add a Iteration:</h2>
-<%= render "iterations/form" %>
+<h2>Iterations:</h2>
+<%= render @project.iteration %>
+
 
 <br />
 <%= link_to '編集する', edit_project_path(@project) %> |

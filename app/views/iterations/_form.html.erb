@@ -1,20 +1,20 @@
-  <div class="field">
-   <%= f.label :name %>
-   <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :exit_date %><br />
-    <%= f.date_select :exit_date %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="action">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%#= form_for @project do |project_form| %>
+  <%= @test.fields_for :iteration do |f| %>          
+    <div class="field">
+     <%= f.label :name %>
+     <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :start_date %><br />
+      <%= f.date_select :start_date %>
+    </div>
+    <div class="field">
+      <%= f.label :exit_date %><br />
+      <%= f.date_select :exit_date %>
+    </div>
+    <div class="field">
+      <%= f.label :status %><br />
+      <%= f.text_field :status %>
+    </div>
+  <% end %>
+<%# end %>

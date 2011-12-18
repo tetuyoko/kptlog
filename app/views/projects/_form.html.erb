@@ -1,4 +1,8 @@
-<%= form_for(@project) do |f| %>
+<% @project.tags.build  %>
+<% @project.iteration = Iteration.new  %>
+
+<%= form_for @project do |project_form| %>
+<% @test = project_form  %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= "#{@project.errors.count}件のエラー" %> が発生しているため保存しませんでした。</h2>
@@ -12,20 +16,24 @@
   <% end %>
 
   <div class="field">
-    <% if @project.name.nil? || @project.name.empty?  %>
-      <%= f.label 'プロジェクト名' %><br />
-      <%= f.text_field :name %>
-    <% end %>
+      <%= project_form.label :name, 'プロジェクト名' %><br />
+      <%= project_form.text_field :name %>
+  </div>
+ 
+  <h2>Iteration</h2>
+
+  <%= render :partial => 'iterations/form' %>
+  <%#= render :partial => 'iterations/form',
+    :locals => {:project_form => @test } %>
+             
+  <h2>Tags</h2>
+  <%= render :partial => 'tags/form',
+             :locals => {:form => project_form} %>
+  <div class="actions">
+    <%= project_form.submit %>
   </div>
 
-    <%= f.fields_for :iterations do |i| %>
-      <%= i.text_field :name, :size => 15 %><br />
-      <%= i.date_select :start_date %> To
-      <%= i.date_select :exit_date %>
-      <br />
-      <br />
-    <% end %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= link_to( 'create new project!', projects_path,  method: :post ) %> 
+
+  <%= debug @project %>
 <% end %>

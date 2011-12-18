@@ -1,9 +1,7 @@
-<%= iteration.name %>
+<%= link_to iteration.name, [iteration.project, iteration] %>
 [ <%= iteration.status %> ]
 (<%= iteration.start_date %> ~  <%= iteration.exit_date %>)
 
-<p>
-<%= link_to 'iterationを削除する', [iteration.project, iteration], confirm: 'ほんとに削除していいですか?', method: :delete %>
-</p>
+<%= link_to '削除', [iteration.project, iteration], confirm: 'ほんとに削除していいですか?', method: :delete %>
 
 <hr />

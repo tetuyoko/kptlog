@@ -50,15 +50,12 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
 
-    respond_to do |format|
-      if @project.save
-       # format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.html { redirect_to '/projects', notice: "#{@project.name}が作られました." }
-        format.json { render json: @project, status: :created, location: @project }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
+    @hoge = params
+     
+    if @project.save
+      redirect_to @project, notice: 'Project was successfully created.' 
+    else
+      render action: :new 
     end
   end
 

@@ -5,6 +5,8 @@ class Iteration < ActiveRecord::Base
   has_many :kpts
   accepts_nested_attributes_for :kpts, :allow_destroy => true
 
+  accepts_nested_attributes_for :project, :allow_destroy => true
+
   validates :name,
       :presence => {:message => "は必須です。"} 
 end
