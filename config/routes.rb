@@ -1,5 +1,9 @@
 Kptlog::Application.routes.draw do
 
+  get "home/index"
+
+  devise_for :users
+
   resources :projects do
     resources :iterations, :on => :collection
   end
@@ -61,5 +65,6 @@ Kptlog::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  root :to => 'projects#index'
+  #root :to => 'projects#index'
+  root :to => 'home#index'
 end

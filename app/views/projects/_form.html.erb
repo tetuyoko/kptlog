@@ -1,4 +1,3 @@
-<% @project.tags.build  %>
 <% @project.iteration = Iteration.new  %>
 
 <%= form_for @project do |project_form| %>
@@ -26,9 +25,6 @@
   <%#= render :partial => 'iterations/form',
     :locals => {:project_form => @test } %>
              
-  <h2>Tags</h2>
-  <%= render :partial => 'tags/form',
-             :locals => {:form => project_form} %>
   <div class="actions">
     <%= project_form.submit %>
   </div>
