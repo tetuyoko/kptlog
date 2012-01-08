@@ -1,26 +1,21 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem 'rails', '3.1.3'
 gem 'sqlite3'
-
 gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+  gem 'sass-rails', "~> 3.1.5"
+  gem 'coffee-rails', "~> 3.1.1"
+  gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
 
 # Rack 1.4bugs
-gem 'rack', '1.3.3'
+# gem 'rack', '~> 1.3.3'
 
 # to fix execjs.2011/10/01 tyokoyama
 gem 'execjs'
@@ -35,12 +30,14 @@ gem 'therubyracer', :platforms => :ruby
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :test, :development  do
-  gem "rspec-rails"
+  gem "rspec-rails", '~> 2.7'
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
-  gem "spork", "> 0.9.0.rc"
+  gem "spork", "~> 0.9.0.rc"
   gem "guard-spork"
+  gem "cucumber-rails"
+  gem "database_cleaner"
   gem "libnotify"
   gem "rb-inotify"
   gem 'turn', :require => false
